@@ -5,7 +5,7 @@ public class ContaBancaria {
     private String titular;
 
     public ContaBancaria(float saldo, String titular) {
-        if saldo < 0
+        if (saldo < 0)
             saldo = 0;
 
         this.saldo = saldo;
@@ -13,7 +13,7 @@ public class ContaBancaria {
     }
 
     public void depositar(float valor) {
-        if valor <= 0 {
+        if (valor <= 0) {
             System.out.println("Não é possível depositar valores menores ou iguais a zero!");
             return;
         }
@@ -22,17 +22,15 @@ public class ContaBancaria {
     }
 
     public void sacar(float valor) {
-        if valor <= 0 {
+        if (valor <= 0) {
             System.out.println("Não é possível sacar valores menores ou iguais a zero!");
             return;
         }
-        if valor > saldo {
+        if (valor > saldo) {
             System.out.println("Não é possível sacar um saldo maior que o disponível!");
             return;
         }
         saldo -= valor;
-        if saldo < 0
-            saldo = 0;
 
     }
 
